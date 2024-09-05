@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FM Map Hs2T.Com</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS để tạo giao diện người dùng -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- Leaflet CSS để hiển thị bản đồ -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Phần hiển thị bản đồ -->
+    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative; outline-style: none;">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(-414px, 0px, 0px);">
+            <div class="leaflet-pane leaflet-tile-pane">
+                <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                    <!-- <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6503/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(493px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6504/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(749px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6503/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(493px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6504/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(749px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6503/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(493px, 472px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6504/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(749px, 472px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6502/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(237px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6505/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1005px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6502/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(237px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6505/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1005px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6502/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(237px, 472px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6505/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1005px, 472px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6501/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-19px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6506/3606.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1261px, 216px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://c.tile.openstreetmap.org/13/6501/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-19px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6506/3605.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1261px, -40px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://b.tile.openstreetmap.org/13/6501/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-19px, 472px, 0px); opacity: 1;"> -->
+                        <!-- <img alt="" src="https://a.tile.openstreetmap.org/13/6506/3607.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1261px, 472px, 0px); opacity: 1;"> -->
+                    <!-- </div> -->
+                </div>
+            </div>
+            <div class="leaflet-pane leaflet-overlay-pane"></div>
+            <div class="leaflet-pane leaflet-shadow-pane">
+                <!-- <img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(659px, 309px, 0px);"> -->
+            </div>
+                <div class="leaflet-pane leaflet-marker-pane">
+                    <!-- <img src="https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="Marker" tabindex="0" role="button" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(659px, 309px, 0px); z-index: 309;"> -->
+                </div>
+                    <div class="leaflet-pane leaflet-tooltip-pane"></div>
+                    <div class="leaflet-pane leaflet-popup-pane"></div>
+                    <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(1.66493e+06px, 923229px, 0px) scale(4096);">
+                    </div>
+                </div>
+                <div class="leaflet-control-container">
+                    <div class="leaflet-top leaflet-left">
+                        <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                            <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false">
+                                <span aria-hidden="true">+</span>
+                            </a>
+                            <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false">
+                                <span aria-hidden="true">−</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="leaflet-top leaflet-right"></div>
+                    <div class="leaflet-bottom leaflet-left"></div>
+                    <div class="leaflet-bottom leaflet-right">
+                        <div class="leaflet-control-attribution leaflet-control">
+                            <a href="https://leafletjs.com" title="A JavaScript library for interactive maps">
+                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag">
+                                    <path fill="#4C7BE1" d="M0 0h12v4H0z"></path>
+                                    <path fill="#FFD500" d="M0 4h12v3H0z"></path>
+                                    <path fill="#E0BC00" d="M0 7h12v1H0z"></path>
+                                </svg> 
+                                "Leaflet"
+                            </a>
+                             <span aria-hidden="true">|</span> 
+                             "© OpenStreetMap"
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+
+    <!-- Form điều khiển thiết bị -->
+    <div id="device_form">
+        <form class="form-inline">
+            <!-- Nút để refresh dữ liệu từ máy chủ -->
+            <button type="button" id="button_get_data" class="btn btn-default col-sm-2">Refresh</button>
+            <!-- Dropdown để chọn thiết bị -->
+            <div class="form-group col-sm-4">
+                <select id="select_device" class="form-select form-control" aria-label="Device">
+                    <option value="Rrxbfka2EXhGKYbivFDHhVwytxtSesNjkMRBJlHwmYg=">Me Tag</option>
+                    <option value="new">Create new device!</option>
+                </select>
+            </div>
+            <!-- Dropdown để chọn lịch sử của thiết bị -->
+            <div class="form-group col-sm-4">
+                <select id="select_history" class="form-select form-control" aria-label="History">
+                    <option>Loading...</option>
+                </select>
+            </div>
+            <!-- Nút để chỉnh sửa thông tin thiết bị -->
+            <button type="button" id="button_edit" class="btn btn-default col-sm-2">Edit</button>
+        </form>
+    </div>
+
+    <!-- Modal để chỉnh sửa thông tin thiết bị -->
+    <div class="modal fade" id="modal_edit" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">Edit</h4>
+                </div>
+                <div class="modal-body">
+                    <form id="edit_device_form">
+                        <!-- Input ẩn để lưu trữ ID của thiết bị đang chỉnh sửa -->
+                        <input type="hidden" id="edit_device_id">
+                        <!-- Input để nhập tên thiết bị -->
+                        <div class="form-group">
+                            <label for="device_name">Device Name:</label>
+                            <input type="text" class="form-control" id="edit_device_name">
+                        </div>
+                        <!-- Input để hiển thị và tải xuống khóa quảng cáo của thiết bị -->
+                        <div class="form-group">
+                            <label for="device_adv">Advertisement Key:</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="edit_device_adv" disabled>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default" id="button_download_key">
+                                        <i class="glyphicon glyphicon-download-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Nút để gửi form chỉnh sửa -->
+                        <button type="submit" class="btn btn-default" id="button_submit_edit_device">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts để điều khiển chức năng của trang -->
+    <!-- jQuery để thao tác DOM -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Bootstrap JavaScript để quản lý các thành phần giao diện -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Leaflet JavaScript để tạo và quản lý bản đồ -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Khởi tạo bản đồ Leaflet với vị trí và mức zoom ban đầu
+        const map = L.map('map').setView([13.118976744862469, 109.30526898558387], 13);
+
+        // Khởi tạo marker với vị trí ban đầu
+        const marker = L.marker([13.118976744862469, 109.30526898558387]).addTo(map).bindPopup('');
+
+        // Thêm lớp bản đồ từ OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Biến để lưu trữ thông tin thiết bị và vị trí
+        let my_device = {};
+        let device_info = {};
+
+        // Hàm để giải mã và chuyển đổi dữ liệu từ base64 sang tọa độ
+        function get_point(item) {
+            const byteArray = Uint8Array.from(atob(item.payload), c => c.charCodeAt(0));
+            const lat = ((byteArray[0] << 24) | (byteArray[1] << 16) | (byteArray[2] << 8) | byteArray[3]) / 10000000.0;
+            const lon = ((byteArray[4] << 24) | (byteArray[5] << 16) | (byteArray[6] << 8) | byteArray[7]) / 10000000.0;
+            const date = new Date(item.timestamp * 1000);
+            return { lat, lon, date };
+        }
+
+        // Sự kiện thay đổi lịch sử thiết bị, cập nhật marker trên bản đồ
+        $('#select_history').change(function(e) {
+            const selectedOption = $(this).find('option:selected');
+            const lat = selectedOption.attr("lat");
+            const lon = selectedOption.attr("lon");
+            const date = new Date(selectedOption.attr("date")).toLocaleString();
+
+            // Cập nhật vị trí của marker và hiển thị thông tin popup
+            marker.setLatLng([lat, lon]);
+            map.panTo(marker.getLatLng());
+            marker.getPopup().setContent(`<h3>${date}</h3><p class="text_info">Lat: ${lat}</p><p class="text_info">Lon: ${lon}</p>`).openOn(map);
+        });
+
+        // Sự kiện thay đổi thiết bị, cập nhật lịch sử thiết bị được chọn
+        $('#select_device').change(function(e) {
+            const deviceId = e.target.value;
+            if (deviceId === "new") {
+                // Xử lý khi chọn tạo thiết bị mới
+            } else if (my_device[deviceId] && my_device[deviceId].length > 0) {
+                // Xóa các tùy chọn cũ và thêm các tùy chọn mới từ lịch sử thiết bị
+                $('#select_history').empty();
+                my_device[deviceId].forEach(device => {
+                    $('#select_history').append(
+                        $('<option>').attr(device).text(device.date.toLocaleString())
+                    );
+                });
+                // Kích hoạt sự kiện thay đổi để cập nhật vị trí
+                $('#select_history').change();
+            } else {
+                // Hiển thị thông báo khi không có lịch sử thiết bị
+                $('#select_history').html($('<option>').text("Empty"));
+            }
+        });
+
+        // Sự kiện nhấn nút refresh để lấy dữ liệu mới
+        $('#button_get_data').click(get_localtion);
+
+        // Sự kiện nhấn nút edit để mở modal chỉnh sửa thiết bị
+        $('#button_edit').click(function(e) {
+            e.preventDefault();
+            const deviceId = $('#select_device').val();
+            $('#edit_device_id').val(device_info[deviceId].device_id);
+            $('#edit_device_name').val(device_info[deviceId].device_name);
+            $('#edit_device_adv').val(device_info[deviceId].device_adv);
+            $('#modal_edit').modal("show");
+        });
+
+        // Sự kiện nhấn nút tải xuống khóa quảng cáo của thiết bị
+        $('#button_download_key').click(function() {
+            const base64Key = $('#edit_device_adv').val();
+            const byteArray = Uint8Array.from(atob(base64Key), c => c.charCodeAt(0));
+            const blob = new Blob([byteArray], { type: 'application/octet-stream' });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = "key.bin";
+            link.click();
+            URL.revokeObjectURL(link.href);
+        });
+
+        // Sự kiện gửi form để cập nhật thông tin thiết bị
+        $('#edit_device_form').submit(function(e) {
+            e.preventDefault();
+            const submitButton = $('#button_submit_edit_device');
+            submitButton.html('Loading...').prop('disabled', true);
+
+            $.ajax({
+                type: 'POST',
+                url: '/map/edit_device',
+                data: JSON.stringify({
+                    'device_id': $('#edit_device_id').val(),
+                    'device_name': $('#edit_device_name').val()
+                }),
+                contentType: 'application/json',
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status === 0) {
+                        get_devices();
+                    }
+                },
+                complete: function() {
+                    submitButton.html('Submit').prop('disabled', false);
+                    $('#modal_edit').modal('hide');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

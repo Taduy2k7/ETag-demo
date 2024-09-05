@@ -1,0 +1,24 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.text_info {
+    font-size: 18px;
+}
+#map {
+    height: 100%;
+}
+#device_form {
+    padding: 0px 20px;
+    position: absolute;
+    display: flex;
+    bottom: 10px;
+    left: -10px;
+    width: 100%;
+    z-index: 999;
+}
+
+#device_form select {
+    width: 100%;
+}
